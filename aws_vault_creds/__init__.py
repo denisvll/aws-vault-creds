@@ -151,14 +151,16 @@ plugin = CredentialPlugin(
             'label': 'Vault k8s auth mount path',
             'type': 'string'
         }, {
-            'id': 'creds_path',
-            'label': 'Vault AWS creds path',
-            'type': 'string'
-        }, {
             'id': 'creds_backend',
             'label': 'Vault AWS creds backend name',
             'type': 'string'
         }],
+        "metadata": [
+            {
+                'id': 'creds_path',
+                'label': 'Vault AWS creds path',
+                'type': 'string'
+            }],
         'required': ['url', 'role', 'auth_path', 'creds_path', 'creds_backend'],
     },
     # backend is a callable function which will be passed all of the values
