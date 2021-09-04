@@ -119,7 +119,7 @@ def aws_cred(**kwargs):
 
 
 plugin = CredentialPlugin(
-    'Example AWX Credential Plugin',
+    'HashiCorp Vault AWS creds',
     # see: https://docs.ansible.com/ansible-tower/latest/html/userguide/credential_types.html
     # inputs will be used to create a new CredentialType() instance
     #
