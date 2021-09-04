@@ -140,21 +140,26 @@ plugin = CredentialPlugin(
     inputs={
         'fields': [{
             'id': 'url',
-            'label': 'Server URL',
+            'label': 'Vault Server URL',
             'type': 'string',
         }, {
-            'id': 'token',
-            'label': 'Authentication Token',
-            'type': 'string',
-            'secret': True,
+            'id': 'role',
+            'label': 'Vault k8s auth role name',
+            'type': 'string'
+        }, {
+            'id': 'auth_path',
+            'label': 'Vault k8s auth mount path',
+            'type': 'string'
+        }, {
+            'id': 'creds_path',
+            'label': 'Vault AWS creds path',
+            'type': 'string'
+        }, {
+            'id': 'creds_backend',
+            'label': 'Vault AWS creds backend name',
+            'type': 'string'
         }],
-        'metadata': [{
-            'id': 'identifier',
-            'label': 'Identifier',
-            'type': 'string',
-            'help_text': 'The name of the key in My Credential System to fetch.'
-        }],
-        'required': ['url', 'token', 'secret_key'],
+        'required': ['url', 'role', 'auth_path', 'creds_path', 'creds_backend'],
     },
     # backend is a callable function which will be passed all of the values
     # defined in `inputs`; this function is responsible for taking the arguments,
